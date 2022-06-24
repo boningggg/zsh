@@ -12,6 +12,8 @@ macos_config()
 	brew install pure
 	brew install zsh-autosuggestions
 	brew install zsh-syntax-highlighting
+	rm ${HOME}/.zshrc
+	cp ${HOME}/.config/zsh/.zshrc_macos ${HOME}/.zshrc
 }
 
 linux_config()
@@ -33,6 +35,8 @@ linux_config()
 	if [ ! -d "${HOME}/.local/share/zsh/zsh-syntax-highlighting" ]; then
 		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "${HOME}/.local/share/zsh/zsh-syntax-highlighting"
 	fi
+	rm ${HOME}/.zshrc
+	cp ${HOME}/.config/zsh/.zshrc_linux ${HOME}/.zshrc
 }
 
 main ()
@@ -42,7 +46,7 @@ main ()
 		darwin) macos_config ;;
 		linux)  linux_config ;;
 	esac
-	cp ${HOME}/.config/zsh/.zshrc ${HOME}/
+	
 
 	echo ""
 	echo "Having configured the zsh, please logout your computer and login."

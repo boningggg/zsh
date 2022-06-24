@@ -1,0 +1,16 @@
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+########## Alias ##########
+alias l='ls -CF --color=auto'
+alias la='ls -A --color=auto'
+alias ll='ls -alF --color=auto'
+alias ls='ls --color=auto'
+
+# Prompt Theme - Pure
+autoload -U promptinit; promptinit
+zstyle :prompt:pure:git:branch color green
+zstyle :prompt:pure:prompt:success color green
+# turn on git stash status
+zstyle :prompt:pure:git:stash show yes
+prompt pure
